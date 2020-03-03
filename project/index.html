@@ -10,28 +10,48 @@
 
 <body>
 
-  <section>
-    <h1>OBA Api</h1>
-    <div id="menu">
-      <input type="text" id="user-input-field" placeholder="Search a song" required>
-      <button id=submitbtn type="button">Submit</button>
-    <!-- <input type="radio" value="harry potter" id="group1" name="group" checked>
-    <label for="group1"  class="user-input-field">Harry potter</label>
-    <input type="radio" value="dolfje" id="group2" name="group" >
-    <label for="group2"  class="user-input-field">Dolfje</label>
-    <input type="radio" value="tolkien" id="group3" name="group" >
-    <label for="group3"  class="user-input-field">Tolkien</label> -->
+  <nav>
+    <img src="../project/static/source/logo.png" alt="logo">
+    <div id="settings">
+      <div id="filter">
+        <select id="sorteren">
+          <option value="populer">Populer</option>
+          <option value="new">New</option>
+        </select>
+      </div>
+      <div id="search">
+        <input type="text" id="user-input-field" placeholder="Zoek een werkstuk" required>
+        <button id=submitbtn type="button">Enter</button>
+      </div>
+
+
+
     </div>
-  </section>
+    <div id="profiel">
+      <ul>
+        <li>
+          <img src="./static/source/girl.svg">
+          <P>Hallo Naomi</P>
+        </li>
+        <li>
+          <img src="./static/source/books.svg">
+          <P>Favorieten</P>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <section>
-    <main class="list">
+    <h1 id="trefwoord"></h1>
+    <main id="list">
 
     </main>
+
   </section>
   <section>
-    <main id="info">
+    <div id="detail">
 
-    </main>
+    </div>
+
   </section>
   <script src="static/js/app.js"></script>
   <script src="./static/js/vendor/routie.min.js"></script>

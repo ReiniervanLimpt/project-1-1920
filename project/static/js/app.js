@@ -47,12 +47,14 @@ const config = {
 
 fetch(url, config)
   .then(response => {
-    const Info = document.querySelector('main.list')
-    Info.innerHTML = ""
+    // const Info = document.querySelector('main.list')
+    // Info.innerHTML = ""
     return response.json();
   })
   .then(data => {
     render(data);
+    const trefwoord = document.getElementById("trefwoord")
+    trefwoord.innerHTML += 'Op zoek naar: ' +  (userInput)
   })
   .catch(err => {
     console.log(err);
@@ -76,6 +78,5 @@ function render(data) {
       main.insertAdjacentHTML('beforeend', html);
               })
 
-      
-}
+            }  
 }
