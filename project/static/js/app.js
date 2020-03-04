@@ -1,5 +1,3 @@
-
-
 /*** Fetching data -> refactor into module later ***/
 const button = document.getElementById('submitbtn')
 button.addEventListener("click", getUserInput);
@@ -43,7 +41,7 @@ function getUserInput() {
   function render(data) {
     const results = data.results;
     console.dir(results);
-    results.forEach(item  => {
+    results.forEach(item => {
       const html = `
             <article>
               <img src="${
@@ -55,28 +53,24 @@ function getUserInput() {
           `;
       main.insertAdjacentHTML('beforeend', html);
       routie({
-        
+
         [item.isbn]: function () {
-          console.log('test')
-          const Info = document.getElementById('detail')
-          Info.innerHTML = ""
-          // const Displaylist = document.getElementById('list')
-          // Displaylist.innerHTML = ""
-          const hash = window.location.hash.slice(1)
-          if (hash == item.isbn) {
-          // console.log(db.track_id)
-          const html = `
+            console.log('test')
+            const Info = document.getElementById('detail')
+            Info.innerHTML = ""
+            const hash = window.location.hash.slice(1)
+            if (hash == item.isbn) {
+              const html = `
             <ul id = "bookinfo">
             <li>
             <img src="${
-              item.coverimages ? item.coverimages[1] : 'Geen samenvatting'
+               item.coverimages[1]
             }">
             </li>
             <li>
-            <h2>${item.titles[0]}</h2>
             <hr>
-            <b>Schrijver(s) </b>
-              <p>${item.authors}</p>
+            <b>Titel</b>
+              <p>${item.titles}</p>
               <hr>
               <b>Talen </b>
               <p>${item.languages}</p>
@@ -84,14 +78,54 @@ function getUserInput() {
               <b>Samenvatting </b>
               <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
               <hr>
-              <p><a href = "${item.detailLink}"> Bekijk Werkstuk </a></p>
+              <p><a href ="#overview"> Bekijk Werkstuk </a>
+             <a href ="#editor"> Bekijk Werkstuk </a>
+             </p>
             </li>
             </ul>
             
           `;
-      Info.insertAdjacentHTML('beforeend', html);
-        }}
+              Info.insertAdjacentHTML('beforeend', html);
+
+            }
+          },
+          overview: function () {
+            const overview = document.getElementById("bookinfo");
+            overview.parentNode. removeChild(overview);
+          },
+          editor: function () {
+            const Info = document.getElementById('page')
+            Info.innerHTML = ""
+            const html = `
+            <section id="editor">
+            <div class="block1">
+              <sidebar>
+               
+             <p> <img src="https://v111.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/363926461&token=c1322402"></p>
+            <div class="controls">
+             <button>Vorige</button> 
+             <p>Bladzijde 1</p>
+             <button>Volgende</button>
+            </div>
+          </div>
+            <div class="block2">
+              <form action="">
+                <ul>
+                  <li><img src="./static/source/text.svg" alt=""></li>
+                  <li><img src="./static/source/photo.svg" alt=""></li>
+                  <li><img src="./static/source/color.svg" alt=""></li>
+                  <li><img src="./static/source/search.svg" alt=""></li>
+                  </ul>
+                <textarea id="w3mission" rows="29" cols="80"></textarea>
+              </form>
+            </sidebar>
+            </div>
+          </section>
+          `;
+              Info.insertAdjacentHTML('beforeend', html);
+          }
+          
       })
-  })
- }
+    })
+  }
 }
