@@ -1,10 +1,10 @@
 # Project 1 @cmda-minor-web · 2019-2020
 
-## OBA report helper (Prototype)
+## OBA report Maker (Prototype)
 
 ![c223af6ed012dccaa7805457ab4c9204](https://user-images.githubusercontent.com/43183768/75981579-17521b00-5ee5-11ea-86bc-433bcd2ab16c.jpg)
 
-OBA report helper helps children to make a report with the books from the OBA.
+OBA report Maker helps children to make a report with the books from the OBA.
 
 * A range of books that can help you make a report
 * See more information about your selected book
