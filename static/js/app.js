@@ -7,6 +7,11 @@ function getUserInput() {
   const userInput = document.querySelector("input").value
   console.log("Searching for: ", userInput)
 
+  //Loading State
+  const trefwoord = document.getElementById("trefwoord")
+      trefwoord.innerHTML = ''
+      trefwoord.innerHTML = 'Zoeken naar ' + (userInput) + '......'
+
   const main = document.querySelector('main');
   const cors = 'https://cors-anywhere.herokuapp.com/';
   const endpoint = 'https://zoeken.oba.nl/api/v1/search/?q=';
@@ -23,13 +28,15 @@ function getUserInput() {
 
   fetch(url, config)
     .then(response => {
+      const list = document.getElementById('list')
+      list.innerHTML = ''
       return response.json();
     })
     .then(data => {
       render(data);
       const trefwoord = document.getElementById("trefwoord")
       trefwoord.innerHTML = ''
-      trefwoord.innerHTML = 'Op zoek naar: ' + (userInput)
+      trefwoord.innerHTML = 'Boeken gevonden over: ' + (userInput)
     })
     .catch(err => {
       console.log(err);

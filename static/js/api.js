@@ -2,7 +2,7 @@
 const main = document.getElementById('list');
 const cors = 'https://cors-anywhere.herokuapp.com/';
 const endpoint = 'https://zoeken.oba.nl/api/v1/search/?q=';
-const query = 'special:all';
+const query = 'Tiger';
 const key = '1e19898c87464e239192c8bfe422f280';
 const secret = '4289fec4e962a33118340c888699438d';
 const detail = 'Default';
@@ -22,9 +22,9 @@ fetch(url, config)
   })
   .then(data => {
     render(data);
-    const trefwoord2 = document.getElementById("trefwoord1")
+    const trefwoord2 = document.getElementById("trefwoord")
       trefwoord2.innerHTML = ''
-      trefwoord2.innerHTML = 'Op zoek naar: ' + (query)
+      trefwoord2.innerHTML =  (query)
   })
   .catch(err => {
     console.log(err);
@@ -40,8 +40,7 @@ function render(data) {
               <img src="${
                 item.coverimages ? item.coverimages[1] : 'Geen samenvatting'
               }">
-              <a href = '#${
-                item.id}'></a>
+              <a href = '#${item.isbn ? item.isbn[0]: '' }'></a>
             </article>
             
           `;
