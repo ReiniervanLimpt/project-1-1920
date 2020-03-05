@@ -1,8 +1,8 @@
 
-const main = document.getElementById('list2');
+const main = document.getElementById('list');
 const cors = 'https://cors-anywhere.herokuapp.com/';
 const endpoint = 'https://zoeken.oba.nl/api/v1/search/?q=';
-const query = 'CSS';
+const query = 'special:all';
 const key = '1e19898c87464e239192c8bfe422f280';
 const secret = '4289fec4e962a33118340c888699438d';
 const detail = 'Default';
@@ -22,7 +22,7 @@ fetch(url, config)
   })
   .then(data => {
     render(data);
-    const trefwoord2 = document.getElementById("trefwoord2")
+    const trefwoord2 = document.getElementById("trefwoord1")
       trefwoord2.innerHTML = ''
       trefwoord2.innerHTML = 'Op zoek naar: ' + (query)
   })

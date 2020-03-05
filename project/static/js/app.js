@@ -23,8 +23,6 @@ function getUserInput() {
 
   fetch(url, config)
     .then(response => {
-      const Info = document.querySelector('main')
-      Info.innerHTML = ""
       return response.json();
     })
     .then(data => {
@@ -68,7 +66,6 @@ function getUserInput() {
             }">
             </li>
             <li>
-            <hr>
             <b>Titel</b>
               <p>${item.titles}</p>
               <hr>
@@ -78,8 +75,8 @@ function getUserInput() {
               <b>Samenvatting </b>
               <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
               <hr>
-              <p><a href ="#overview"> Bekijk Werkstuk </a>
-             <a href ="#editor"> Bekijk Werkstuk </a>
+              <p><a class='close' href ="#overview"> X </a>
+             <a href ="#editor"> Maak een Werkstuk </a>
              </p>
             </li>
             </ul>
@@ -101,31 +98,42 @@ function getUserInput() {
             <div class="block1">
               <sidebar>
                
-             <p> <img src="https://v111.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/363926461&token=c1322402"></p>
+             <p> <img id ="editorbook" src="https://v111.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/363926461&token=c1322402"></p>
             <div class="controls">
-             <button>Vorige</button> 
-             <p>Bladzijde 1</p>
-             <button>Volgende</button>
+             <button id "back" onclick="document.getElementById('editorbook').src='https://v111.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/363926461&token=c1322402'">Vorige</button> 
+             <p>Bladzijde</p>
+             <button id "next" onclick="document.getElementById('editorbook').src='./static/source/voorbeeld-blz.jpg'">Volgende</button> 
             </div>
           </div>
             <div class="block2">
               <form action="">
                 <ul>
                   <li><img src="./static/source/text.svg" alt=""></li>
-                  <li><img src="./static/source/photo.svg" alt=""></li>
+                  <li><img src="./static/source/bold.svg" alt=""></li>
+                  <li><img src="./static/source/italic.svg" alt=""></li>
+                  <li><img src="./static/source/underline.svg" alt=""></li>
+                  <li><img src="./static/source/font.svg" alt=""></li>
                   <li><img src="./static/source/color.svg" alt=""></li>
-                  <li><img src="./static/source/search.svg" alt=""></li>
+                  <li><img src="./static/source/photo.svg" alt=""></li>
+                  
+                  <li><img src="./static/source/gmail.svg" alt=""></li>
+                  <li><img src="./static/source/pdf.svg" alt=""></li>
+
                   </ul>
-                <textarea id="w3mission" rows="29" cols="80"></textarea>
+                <textarea id="editorveld" rows="29" cols="80"></textarea>
               </form>
             </sidebar>
             </div>
           </section>
           `;
+
               Info.insertAdjacentHTML('beforeend', html);
+            
           }
           
       })
     })
   }
 }
+
+//bron:     //https://www.delubas.nl/leesseries/skoop/voor-makkelijk-lezen-in-groep-5-tm-8/
