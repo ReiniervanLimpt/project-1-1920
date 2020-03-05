@@ -120,20 +120,6 @@ section main article:hover {
   transform: translateX(4%) perspective(110px) rotatey(11deg);
 }
 
-section main article:nth-child(6):hover,
-section main article:nth-child(7):hover,
-section main article:nth-child(8):hover,
-section main article:nth-child(9):hover,
-section main article:nth-child(10):hover,
-section main article:nth-child(16):hover,
-section main article:nth-child(17):hover,
-section main article:nth-child(18):hover,
-section main article:nth-child(19):hover,
-section main article:nth-child(20):hover{
-transform: rotate(6.5deg);
-z-index: 2;
-transform: translateX(-4%) perspective(110px) rotatey(-11deg);
-}
 section main a {
   position: absolute;
   left: 0;
