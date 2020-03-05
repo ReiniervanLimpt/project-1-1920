@@ -60,7 +60,6 @@ function getUserInput() {
       routie({
 
         [item.isbn]: function () {
-            console.log('test')
             const Info = document.getElementById('detail')
             Info.innerHTML = ""
             const hash = window.location.hash.slice(1)
@@ -115,7 +114,7 @@ function getUserInput() {
             <div class="block2">
               <form action="">
                 <ul>
-                  <li><img src="./static/source/text.svg" alt=""></li>
+                  <li id"bold" ><img src="./static/source/text.svg" alt=""></li>
                   <li><img src="./static/source/bold.svg" alt=""></li>
                   <li><img src="./static/source/italic.svg" alt=""></li>
                   <li><img src="./static/source/underline.svg" alt=""></li>
