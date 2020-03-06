@@ -118,7 +118,7 @@ section main article:hover {
   trans.editorButtons: rotate(-6.5deg);
   bottom: 15px;
   z-index: 1;
-  trans.editorButtons: translateX(4%) perspective(110px) rotatey(11deg);
+  transform: translateX(4%) perspective(110px) rotatey(11deg);
 }
 
 section main a {
