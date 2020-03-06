@@ -19,9 +19,6 @@ Editor page: You can make a report and also read the book you selected.
 
 ## API
  [http://zoeken.oba.nl/api/v1](http://zoeken.oba.nl/api/v1)
- 
-## Do you need a account?
-No! It works with a session. So if you log out or there is no interaction for a particular time. The stored data is then removed. This is done because of privacy for the children and there parents. 
 
 ## Micro libraries 
 * Routie for routes
