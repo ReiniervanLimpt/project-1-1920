@@ -368,15 +368,25 @@ width: 100%;
   margin: 0;
 }
 
-#editor > div form ul button {
+#editor > div form ul button,
+#editor > div form ul .filebutton  {
   background-color: #fff;
   width: 2.5em;
   height: 2.5em;
   margin-right: 15px;
   position: relative;
   border: none;
+  text-indent: -9999px;
 }
 
+#editor .filebutton {
+
+  background-image: url("../source/photo.svg");
+  background-size: 2em;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
 #editor > div form button img:hover {
   background-color: #efefef;
 }

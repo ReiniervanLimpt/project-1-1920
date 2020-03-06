@@ -119,10 +119,10 @@ function getUserInput() {
                   <button onclick="document.getElementById('editorveld').style.fontStyle  = 'italic'"><img src="./static/source/italic.svg" alt=""></button>
                   <button onclick="document.getElementById('editorveld').style.textDecoration  = 'underline'"><img src="./static/source/underline.svg" alt=""></button>
                   <button onclick="document.getElementById('editorveld').style.color = 'red'" ><img src="./static/source/color.svg" alt=""></button>
-                  <button><img src="./static/source/photo.svg" alt=""></button>
-                  <button><img src="./static/source/gmail.svg" alt=""></button>
+                  <input class="filebutton" type="file">
+                  <button onclick="window.print()" ><img src="./static/source/print.svg" alt=""></button>
+                  <button> <a href="mailto:email@address.com"><img src="./static/source/gmail.svg" alt=""></a></button>
                   <button><img src="./static/source/pdf.svg" alt=""></button>
-
                   </ul>
                 <textarea id="editorveld" rows="29" cols="80"></textarea>
               </form>
