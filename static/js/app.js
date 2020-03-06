@@ -112,7 +112,7 @@ function getUserInput() {
             </div>
           </div>
             <div class="block2">
-              <form action="">
+              <div class="editorButtons">
                 <ul>
                   <button onclick="document.getElementById('editorveld').style.fontFamily = 'Helvetica'"><img src="./static/source/text.svg" alt=""></button>
                   <button onclick="document.getElementById('editorveld').style.fontWeight  = '900'"><img src="./static/source/bold.svg" alt=""></button>
@@ -125,12 +125,11 @@ function getUserInput() {
                   <button><img src="./static/source/pdf.svg" alt=""></button>
                   </ul>
                 <textarea id="editorveld" rows="29" cols="80"></textarea>
-              </form>
+              </div>
             </sidebar>
             </div>
           </section>
           
-          <script src="../project-1-1920/static/js/editor.js"></script>
           `;
 
               Info.insertAdjacentHTML('beforeend', html);
