@@ -89,7 +89,8 @@ section main {
   flex-wrap: wrap;
   border: 5px solid #000;
   /* min-height: 24em; */
-  background-color: #4c4c4c;
+  background-color: #404040;
+  padding-top: 26px;
 }
 
 section main a {
@@ -115,7 +116,7 @@ section main article:hover {
   border-color: yellow;
   width: 6.5em;
   transform: rotate(-6.5deg);
-  bottom: 10px;
+  bottom: 15px;
   z-index: 1;
   transform: translateX(4%) perspective(110px) rotatey(11deg);
 }
@@ -263,6 +264,7 @@ flex-flow: row;
 width: 65em;
 
 z-index: 4;
+transition: 0.8s ease 0s;
 }
 
 #bookinfo li:first-child {
@@ -366,22 +368,29 @@ width: 100%;
   margin: 0;
 }
 
-#editor>div form ul li {
+#editor > div form ul button {
   background-color: #fff;
-  width: 2em;
-  height: 2em;
+  width: 2.5em;
+  height: 2.5em;
   margin-right: 15px;
+  position: relative;
+  border: none;
 }
 
-#editor > div form li img:hover {
+#editor > div form button img:hover {
   background-color: #efefef;
 }
 
-#editor > div form li img {
-  width: 2em;
+#editor > div form button img {
+  width: 100%;
   padding: 5px;
   cursor: pointer;
   transition: 0.3s ease 0s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
 }
 
 form textarea {

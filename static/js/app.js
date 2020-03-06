@@ -114,16 +114,14 @@ function getUserInput() {
             <div class="block2">
               <form action="">
                 <ul>
-                  <li id"bold" ><img src="./static/source/text.svg" alt=""></li>
-                  <li><img src="./static/source/bold.svg" alt=""></li>
-                  <li><img src="./static/source/italic.svg" alt=""></li>
-                  <li><img src="./static/source/underline.svg" alt=""></li>
-                  <li><img src="./static/source/font.svg" alt=""></li>
-                  <li><img src="./static/source/color.svg" alt=""></li>
-                  <li><img src="./static/source/photo.svg" alt=""></li>
-                  
-                  <li><img src="./static/source/gmail.svg" alt=""></li>
-                  <li><img src="./static/source/pdf.svg" alt=""></li>
+                  <button onclick="document.getElementById('editorveld').style.fontFamily = 'Helvetica'"><img src="./static/source/text.svg" alt=""></button>
+                  <button onclick="document.getElementById('editorveld').style.fontWeight  = '900'"><img src="./static/source/bold.svg" alt=""></button>
+                  <button onclick="document.getElementById('editorveld').style.fontStyle  = 'italic'"><img src="./static/source/italic.svg" alt=""></button>
+                  <button onclick="document.getElementById('editorveld').style.textDecoration  = 'underline'"><img src="./static/source/underline.svg" alt=""></button>
+                  <button onclick="document.getElementById('editorveld').style.color = 'red'" ><img src="./static/source/color.svg" alt=""></button>
+                  <button><img src="./static/source/photo.svg" alt=""></button>
+                  <button><img src="./static/source/gmail.svg" alt=""></button>
+                  <button><img src="./static/source/pdf.svg" alt=""></button>
 
                   </ul>
                 <textarea id="editorveld" rows="29" cols="80"></textarea>
@@ -131,10 +129,12 @@ function getUserInput() {
             </sidebar>
             </div>
           </section>
+          
+          <script src="../project-1-1920/static/js/editor.js"></script>
           `;
 
               Info.insertAdjacentHTML('beforeend', html);
-            
+          
           }
           
       })
