@@ -30,5 +30,24 @@ Editor page: You can make a report and also read the book you selected.
 ### Backlog
 * After close detail search function doens't work
 
+### Browser-technology
+i used web developer tool (chrome extention) to test my app
+
+* Afbeeldingen uitzetten
+You can not see the bookcover. A fix could be to use text instead of a img
+* Custom fonts uitzetten
+The site use the default font from the browser 
+* Kleur uitzetten & kleurenblindheid instellen
+
+* muis/Trackpad werkt niet
+Searching a book works fine. but if you want more detail that will take a bit time. A fix cloud be if you select a book you will go to a different page. 
+* Breedband internet uitzetten
+The Books are not visible because the API needs a . A fix could be to use local storage
+* Javascript (volledig) uitzetten
+The App needs the API to work. A fix could be to use local storage
+* Cookies niet accepteren
+NO cookies are used
+* localStorage doet het niet
+No localStorage is used
 
 
