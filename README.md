@@ -105,3 +105,7 @@ Apple Ipad mini 2 - IOS 9.3.5 - Safari
 Nexus 5 Android 6.0.1 - Chrome 75
 
 * Everything works JS, CSS. only the editorpage is not responsive but it wasn't build for it.
+
+## Screen Reader Windows Narrator
+
+* Screen reader works only the books img doens't have a alt that is a fix. 
