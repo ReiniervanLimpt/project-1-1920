@@ -62,4 +62,46 @@ NO cookies are used
 
 No localStorage is used
 
+## Browsers
 
+Google Chrome: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36
+
+* Everything works JS, CSS
+
+Firefox: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0
+
+* Everything works JS, CSS
+
+Edge: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18362
+
+* JS Works it renders the books the only think that doenst work is CSS ::After
+
+Internet Explore: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; .NET4.0C; .NET4.0E; Tablet PC 2.0; rv:11.0) like Gecko
+
+* Display: grid is not support. JS doesn't work
+
+Opera Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36 OPR/67.0.3575.53
+
+* Everything works JS, CSS
+
+Brave: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36
+
+* Everything works JS, CSS
+
+## Devices
+
+Oneplus 6: Chrome 80 - Oneplus 6 - Android 10
+
+* Everything works JS, CSS. only the editorpage is not responsive but it wasn't build for it.
+
+Apple Ipad touch - IOS 6.1.6 - Safari
+
+* CSS Grid and flex dont work. Also JS is not working 
+
+Apple Ipad mini 2 - IOS 9.3.5 - Safari
+
+* CSS  Grid dont work. Flex does work better use flexbox instead of grid. CSS ::after doens't work and JS is not working.
+
+Nexus 5 Android 6.0.1 - Chrome 75
+
+* Everything works JS, CSS. only the editorpage is not responsive but it wasn't build for it.
