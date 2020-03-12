@@ -68,11 +68,11 @@ Google Chrome: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT
 
 * Everything works JS, CSS
 
-Firefox: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0
+Firefox: Windows 10 Firefox/74.0
 
 * Everything works JS, CSS
 
-Edge: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18362
+Edge: Windows 10 Edge/18.18362
 
 * JS Works it renders the books the only think that doenst work is CSS ::After
 
@@ -80,11 +80,11 @@ Internet Explore: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; .NET4
 
 * Display: grid is not support. JS doesn't work
 
-Opera Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36 OPR/67.0.3575.53
+Opera OPR/67.0.3575.53
 
 * Everything works JS, CSS
 
-Brave: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36
+Brave: Mozilla/5.0 Windows 10 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36
 
 * Everything works JS, CSS
 
