@@ -9,8 +9,8 @@ function getUserInput() {
 
   //Loading State
   const trefwoord = document.getElementById("trefwoord")
-      trefwoord.innerHTML = ''
-      trefwoord.innerHTML = 'Zoeken naar ' + (userInput) + '......'
+  trefwoord.innerHTML = ''
+  trefwoord.innerHTML = 'Zoeken naar ' + (userInput) + '......'
 
   const main = document.querySelector('main');
   const cors = 'https://cors-anywhere.herokuapp.com/';
@@ -54,17 +54,17 @@ function getUserInput() {
               }">
               <a href = '#${item.isbn ? item.isbn[0]: '' }'></a>
             </article>
-            
+
           `;
       main.insertAdjacentHTML('beforeend', html);
       routie({
 
-        [item.isbn]: function () {
-            const Info = document.getElementById('detail')
-            Info.innerHTML = ""
-            const hash = window.location.hash.slice(1)
-            if (hash == item.isbn) {
-              const html = `
+        [item.isbn]: function() {
+          const Info = document.getElementById('detail')
+          Info.innerHTML = ""
+          const hash = window.location.hash.slice(1)
+          if (hash == item.isbn) {
+            const html = `
             <ul id = "bookinfo">
             <li>
             <img src="${
@@ -86,29 +86,29 @@ function getUserInput() {
              </p>
             </li>
             </ul>
-            
-          `;
-              Info.insertAdjacentHTML('beforeend', html);
 
-            }
-          },
-          overview: function () {
-            const overview = document.getElementById("bookinfo");
-            overview.parentNode. removeChild(overview);
-          },
-          editor: function () {
-            const Info = document.getElementById('page')
-            Info.innerHTML = ""
-            const html = `
+          `;
+            Info.insertAdjacentHTML('beforeend', html);
+
+          }
+        },
+        overview: function() {
+          const overview = document.getElementById("bookinfo");
+          overview.parentNode.removeChild(overview);
+        },
+        editor: function() {
+          const Info = document.getElementById('page')
+          Info.innerHTML = ""
+          const html = `
             <section id="editor">
             <div class="block1">
               <sidebar>
-               
+
              <p> <img id ="editorbook" src="https://v111.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/363926461&token=c1322402"></p>
             <div class="controls">
-             <button id "back" onclick="document.getElementById('editorbook').src='https://v111.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/363926461&token=c1322402'">Vorige</button> 
+             <button id "back" onclick="document.getElementById('editorbook').src='https://v111.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/363926461&token=c1322402'">Vorige</button>
              <p>Bladzijde</p>
-             <button id "next" onclick="document.getElementById('editorbook').src='./static/source/voorbeeld-blz.jpg'">Volgende</button> 
+             <button id "next" onclick="document.getElementById('editorbook').src='./static/source/voorbeeld-blz.jpg'">Volgende</button>
             </div>
           </div>
             <div class="block2">
@@ -129,13 +129,13 @@ function getUserInput() {
             </sidebar>
             </div>
           </section>
-          
+
           `;
 
-              Info.insertAdjacentHTML('beforeend', html);
-          
-          }
-          
+          Info.insertAdjacentHTML('beforeend', html);
+
+        }
+
       })
     })
   }
