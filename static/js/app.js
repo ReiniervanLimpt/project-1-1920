@@ -1,70 +1,52 @@
+import handler from '../modules/router.js';
+import getData from '../modules/api.js';
+import render from '../modules/render.js'
+
 /*** Fetching data -> refactor into module later ***/
 const button = document.getElementById('submitbtn')
 button.addEventListener("click", getUserInput);
 
+let currentData = ""
+
 function getUserInput() {
   //Get the user input
   const userInput = document.querySelector("input").value
-  console.log("Searching for: ", userInput)
 
   //Loading State
   const trefwoord = document.getElementById("trefwoord")
   trefwoord.innerHTML = ''
   trefwoord.innerHTML = 'Zoeken naar ' + (userInput) + '......'
 
-  const main = document.querySelector('main');
-  const cors = 'https://cors-anywhere.herokuapp.com/';
-  const endpoint = 'https://zoeken.oba.nl/api/v1/search/?q=';
-  const query = (userInput);
-  const key = '0076bc3bc11d080e07a303360178002a';
-  const secret = '187b973dc49e054fa7635313a9c8540f';
-  const detail = 'Default';
 
-
-  const url = `${cors}${endpoint}${query}&authorization=${key}&detaillevel=${detail}&output=json`;
-  const config = {
-    Authorization: `Bearer ${secret}`
-  };
-
-  fetch(url, config)
-    .then(response => {
-      const list = document.getElementById('list')
-      list.innerHTML = ''
-      return response.json();
+  getData(userInput).then(result => {
+      if (localStorage.getItem(userInput) === null) {
+        return result
+      } else {
+        console.log(result.meta)
+        return result.results
+      }
     })
     .then(data => {
-      render(data);
-      const trefwoord = document.getElementById("trefwoord")
       trefwoord.innerHTML = ''
       trefwoord.innerHTML = 'Boeken gevonden over: ' + (userInput)
+      render.overview(data)
+      localStorage.setItem("'" + userInput + "'", JSON.stringify(data));
+      currentData = data
     })
-    .catch(err => {
-      console.log(err);
-    });
+
 
   // render data
-  function render(data) {
-    const results = data.results;
-    console.dir(results);
-    results.forEach(item => {
-      const html = `
-            <article>
-              <img src="${
-                item.coverimages ? item.coverimages[1] : 'Geen samenvatting'
-              }">
-              <a href = '#${item.isbn ? item.isbn[0]: '' }'></a>
-            </article>
+  function testtesttest(data) {
 
-          `;
-      main.insertAdjacentHTML('beforeend', html);
-      routie({
+    routie({
 
-        [item.isbn]: function() {
-          const Info = document.getElementById('detail')
-          Info.innerHTML = ""
-          const hash = window.location.hash.slice(1)
-          if (hash == item.isbn) {
-            const html = `
+      [item.isbn]: function() {
+        const Info = document.getElementById('detail')
+        Info.innerHTML = ""
+        const hash = window.location.hash.slice(1)
+        console.log(hash)
+        if (hash == item.isbn) {
+          const html = `
             <ul id = "bookinfo">
             <li>
             <img src="${
@@ -88,18 +70,18 @@ function getUserInput() {
             </ul>
 
           `;
-            Info.insertAdjacentHTML('beforeend', html);
+          Info.insertAdjacentHTML('beforeend', html);
 
-          }
-        },
-        overview: function() {
-          const overview = document.getElementById("bookinfo");
-          overview.parentNode.removeChild(overview);
-        },
-        editor: function() {
-          const Info = document.getElementById('page')
-          Info.innerHTML = ""
-          const html = `
+        }
+      },
+      overview: function() {
+        const overview = document.getElementById("bookinfo");
+        overview.parentNode.removeChild(overview);
+      },
+      editor: function() {
+        const Info = document.getElementById('page')
+        Info.innerHTML = ""
+        const html = `
             <section id="editor">
             <div class="block1">
               <sidebar>
@@ -132,13 +114,22 @@ function getUserInput() {
 
           `;
 
-          Info.insertAdjacentHTML('beforeend', html);
+        Info.insertAdjacentHTML('beforeend', html);
 
-        }
+      }
 
-      })
     })
   }
 }
+
+(function() {
+
+  const app = {
+    init: function() {
+      handler()
+    }
+  }
+  app.init()
+})()
 
 //bron:     //https://www.delubas.nl/leesseries/skoop/voor-makkelijk-lezen-in-groep-5-tm-8/
