@@ -8,6 +8,7 @@ const detail = 'Default';
 async function getData(userInput) {
 
   let retrievedData = ""
+
   const query = (userInput);
   const url = `${cors}${endpoint}${query}&authorization=${key}&detaillevel=${detail}&output=json`;
   const config = {
@@ -15,9 +16,14 @@ async function getData(userInput) {
   };
 
   if (localStorage.getItem("'" + userInput + "'") === null) {
+    console.log("nee hehe")
     const response = await (fetch(url, config)
       .then(response => {
         return response.json()
+      })
+      .then(data => {
+        localStorage.setItem("'" + userInput + "'", JSON.stringify(data.results));
+        return data.results
       })
       .catch(err => {
         console.log(err)
@@ -25,10 +31,10 @@ async function getData(userInput) {
     )
     return response
   } else {
+    console.log("ja man")
     const retrievedData = await JSON.parse(localStorage.getItem("'" + userInput + "'"))
     return retrievedData
   }
-
 }
 
 export default getData;
